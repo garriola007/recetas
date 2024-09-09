@@ -51,7 +51,7 @@ def generar_imagen(titulo_receta):
         prompt = prompt,
         style = 'vivid',
         size = '1024x1024',
-        quality = 'high',
+        quality = 'standard',
         n=1
     )
     return response.data[0].url
