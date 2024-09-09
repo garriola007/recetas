@@ -64,18 +64,19 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
  
 
     pdf.set_font('Arial', 'B', 15)
-    pdf.multi_cell(0, 10, line)
+    pdf.multi_cell(0, 10, titulo_receta, 0, 'C')
 
     response = requests.get(imagen_url)
-    img = Image.Open(BytesIO(response.content)).convert('RGB')
+    img = Image.open(BytesIO(response.content)).convert('RGB')
     img_path = f"{titulo_receta.replace(' ', '_')}.jpg"
-    img.save(img_path, JPEG)
+    img.save(img_path, 'JPEG')
 
     pdf.ln(10)
-    img_width = pdf.image(img_path, x=(pdf.w -img_width)/2, w=img_width, type='JPEG')
+    img_width = 190
+    pdf.image(img_path, x=(pdf.w -img_width)/2, w=img_width, type='JPEG')
     pdf.ln(10)
 
-    pdf.set_font('Arial', 'B', 15)
+    pdf.set_font('Arial', 'B', 12)
     for line in receta.split('\n'):
         pdf.multi_cell(0, 10, line)
 
@@ -104,13 +105,13 @@ if st.session_state:
     st.image(st.session_state.imagen_receta, caption=st.session_state.titulo_receta)
 
     if st.button('Generar PDF'):
-        pdf.file = guardar_pdf(st.session_state.titulo_receta,
+        pdf_file = guardar_pdf(st.session_state.titulo_receta,
                                st.session_state.receta,
                                st.session_state.imagen_receta
                                )
-        with open(pdf.file,'rb') as f:
+        with open(pdf_file,'rb') as f:
             st.download_button(label="Descargar PDF", 
-                               data=f, file_name="pdf.file",
+                               data=f, file_name="pdf_file.pdf",
                                mime='application/pdf'
                 )
 
