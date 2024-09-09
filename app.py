@@ -70,7 +70,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     img.save(img_path, JPEG)
 
     pdf.ln(10)
-    img_width = pdf.image(img_path, w=(pdf.w -img_width)/2, w=img_width, type='JPEG')
+    img_width = pdf.image(img_path, x=(pdf.w -img_width)/2, w=img_width, type='JPEG')
     pdf.ln(10)
 
     pdf.set_font(Arial, 12)
