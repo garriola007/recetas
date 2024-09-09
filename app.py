@@ -82,7 +82,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
 
     return pdf_file
 
-st.title("Generador de recetas")
+st.title("Generador")
 st.write("Ingrese los ingredientes para genera una receta personalizada")
 ingredientes = st.text_input('Ingredientes separadospor coma:', 'ingrediente1, ingrediente2, etc')
 
