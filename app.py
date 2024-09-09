@@ -93,7 +93,7 @@ if st.button('Generar receta'):
     st.session_state.receta = receta
     titulo_receta= obtener_nombre_receta(receta)
     st.session_state.titulo_receta = titulo_receta
-    imagen_receta = generar_imagen(titulo_receta)
+    imagen_receta = generar_imagen(receta)
     st.session_state.imagen_receta = imagen_receta
 
 if st.session_state:
