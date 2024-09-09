@@ -7,7 +7,7 @@ from io import BytesIO
 
 key = st.text_input('input your Key', type='password')
 client = OpenAI(api_key=key)
-st.title(key)
+#st.title(key)
 
 
 def generar_receta(ingredientes):
