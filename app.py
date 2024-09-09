@@ -67,7 +67,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     response = requests.get(imagen_url)
     img = Image.Open(BytesIO(response.content)).convert('RGB')
     img_path = f"{titulo_receta.replace(' ', '_')}.jpg"
-    img.save(img_path, format:'JPEG')
+    img.save(img_path, JPEG)
 
     pdf.ln(10)
     img_width = pdf.image(img_path, w=(pdf.w -img_width)/2, w=img_width, type='JPEG')
