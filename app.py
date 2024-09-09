@@ -102,7 +102,7 @@ if st.session_state:
     st.image(st.session_state.imagen_receta, caption=st.session_state.titulo_receta)
 
 if st.button('Generar PDF'):
-    pdf.file = generar_pdf(st.session_state.titulo.receta,
+    pdf.file = guardar_pdf(st.session_state.titulo.receta,
                            st.session_state.receta,
                            st.session_state.imagen_receta
                            )
