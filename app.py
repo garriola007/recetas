@@ -38,7 +38,7 @@ def obtener_nombre_receta(texto):
     return lineas[1]
 
 def generar_imagen(titulo_receta):
-    promt = f'''
+    prompt = f'''
         Genera una imagen fotorealista del plato final titulado: "{ titulo_receta }".
         El plato debe estar bellamente presentado en un plato de cerámica con un enfoque cercano en las texturas y colores.
         de los ingredientes.
@@ -48,7 +48,7 @@ def generar_imagen(titulo_receta):
     '''
     response = client.images.generate(
         model = 'Dalle-e-3',
-        promt = promt,
+        prompt = prompt,
         style = 'vivid',
         size = '1024x1024',
         quality = 'high',
