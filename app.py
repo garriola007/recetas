@@ -59,12 +59,12 @@ def generar_imagen(titulo_receta):
 def guardar_pdf(titulo_receta, receta, imagen_url):
     pdf = FPDF()
     pdf.add_page()
-    style = str(style).upper()
-    pdf.set_font('Arial', 12, style=style)
+    #style = str(style).upper()
+    pdf.set_font('Arial', 'B', 12)
  
- 
+
     pdf.set_font('Arial', 'B', 15)
-    pdf.cell(0, 10, titulo_receta, 0, C)
+    pdf.multi_cell(0, 10, line)
 
     response = requests.get(imagen_url)
     img = Image.Open(BytesIO(response.content)).convert('RGB')
@@ -75,7 +75,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     img_width = pdf.image(img_path, x=(pdf.w -img_width)/2, w=img_width, type='JPEG')
     pdf.ln(10)
 
-    pdf.set_font('Arial', 12)
+    pdf.set_font('Arial', 'B', 15)
     for line in receta.split('\n'):
         pdf.multi_cell(0, 10, line)
 
