@@ -62,7 +62,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     pdf.set_font(Arial, 12)
 
     pdf.set_font(Arial, B, 15)
-    pdf.cell(w:0, h:10, txt=titulo_receta, border=0, align="C")
+    pdf.cell(0, 10, titulo_receta, 0, C)
 
     response = requests.get(imagen_url)
     img = Image.Open(BytesIO(response.content)).convert('RGB')
