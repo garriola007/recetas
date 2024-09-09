@@ -27,8 +27,8 @@ def generar_receta(ingredientes):
                 {'role': 'system', 'content': system_prompt},
                 {'role': 'user', 'content': user_prompt}
             ],
-            max_tokents = 1020,
-            temperatura = 0.9     
+            max_tokens = 1020,
+            temperature = 0.9     
     )
 
     return response.choices[0].message.content
