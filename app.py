@@ -59,8 +59,10 @@ def generar_imagen(titulo_receta):
 def guardar_pdf(titulo_receta, receta, imagen_url):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font('Arial', 12)
-
+    style = str(style).upper()
+    pdf.set_font('Arial', 12, style=style)
+ 
+ 
     pdf.set_font('Arial', 'B', 15)
     pdf.cell(0, 10, titulo_receta, 0, C)
 
