@@ -93,12 +93,23 @@ if st.button('Generar receta'):
     st.session_state.receta = receta
     titulo_receta= obtener_nombre_receta(receta)
     st.session_state.titulo_receta = titulo_receta
-    imagen_receta = generar_imagen(receta)
+    imagen_receta = generar_imagen(titulo_receta)
     st.session_state.imagen_receta = imagen_receta
 
 if st.session_state:
     st.write(f"{st.session_state.titulo_receta}")
     st.write(st.session_state.receta)
     st.image(st.session_state.imagen_receta, caption=st.session_state.titulo_receta)
+
+if st.button('Generar PDF'):
+    pdf.file = generar_pdf(st.session_state.titulo.receta,
+                           st.session_state.receta,
+                           st.session_state.imagen_receta
+                           )
+    with open(pdf.file,'rb') as f:
+        st.download_button(label="Descargar PDF", 
+                           data=f, file_name="pdf.file",
+                           mime='application/pdf'
+        )
 
 
