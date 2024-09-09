@@ -81,3 +81,7 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     pdf.output(pdf_file)
 
     return pdf_file
+
+st.title("Generador de recetas")
+
+
