@@ -88,7 +88,7 @@ ingredientes = st.text_input('Ingredientes separadospor coma:', 'ingrediente1, i
 
 
 if st.button('Generar receta'):
-    ingredientes_lista = [ing_stip() for ing in ingredientes.split(',')]
+    ingredientes_lista = [ing_strip() for ing in ingredientes.split(",")]
     receta = generar_receta(ingredientes_lista)
     st.session_state.receta = receta
     titulo_receta= obtener_nombre_receta(receta)
