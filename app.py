@@ -39,9 +39,9 @@ def obtener_nombre_receta(texto):
 
 def generar_imagen(titulo_receta):
     prompt = f'''
-        Genera una imagen fotorealista del plato final titulado: "{ titulo_receta }".
+        Eres un chef de primera clase premiado con estrellas Michellin. Genera una imagen fotorealista del plato final titulado: "{ titulo_receta }".
         El plato debe estar bellamente presentado en un plato de cerámica con un enfoque cercano en las texturas y colores.
-        de los ingredientes. Debe ajustarse estrictamente a la receta y sus ingredientes: "{ ingredientes_lista}"
+        de los ingredientes. Debe ajustarse estrictamente a la receta y sus ingredientes: "{ ingredientes}"
         La ambientacion debe ser una mesa de madera con iluminacion natural para resaltar las características apetitosas de la comida. 
         Asegurate de que la imagen capture los colores ricos y vibrantes y los detalles intrincados de la comida, haciendola parecer recién preparada y lista para comer. 
         La imagen debe estar en formato JPG.
