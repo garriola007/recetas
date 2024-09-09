@@ -21,7 +21,7 @@ def generar_receta(ingredientes):
         Ingredientes de la receta con tamaño y porción:
         Lista de instrucciones para la receta:
         '''
-    response = client.Chat.Completion.create(
+    response = client.chat.completions.create(
             model = 'gpt-4o',
             messages=[
                 {'role': 'system', 'content': system_prompt},
