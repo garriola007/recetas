@@ -47,7 +47,7 @@ def generar_imagen(titulo_receta):
         La imagen debe estar en formato JPG.
     '''
     response = client.images.generate(
-        model = 'Dalle-e-3',
+        model = 'dall-e-3',
         prompt = prompt,
         style = 'vivid',
         size = '1024x1024',
