@@ -73,9 +73,9 @@ def guardar_pdf(titulo_receta, receta, imagen_url):
     img_width = pdf.image(img_path, w=(pdf.w -img_width)/2, w=img_width, type='JPEG')
     pdf.ln(10)
 
-    pdf.set_font(family:'Arial', size=12)
+    pdf.set_font(Arial, 12)
     for line in receta.split('\n'):
-        pdf.multi_cell(w: 0, h:10, line)
+        pdf.multi_cell(0, 10, line)
 
     pdf_file = "receta.pdf"
     pdf.output(pdf_file)
