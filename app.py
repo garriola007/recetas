@@ -101,15 +101,15 @@ if st.session_state:
     st.write(st.session_state.receta)
     st.image(st.session_state.imagen_receta, caption=st.session_state.titulo_receta)
 
-if st.button('Generar PDF'):
-    pdf.file = guardar_pdf(st.session_state.titulo.receta,
-                           st.session_state.receta,
-                           st.session_state.imagen_receta
-                           )
-    with open(pdf.file,'rb') as f:
-        st.download_button(label="Descargar PDF", 
-                           data=f, file_name="pdf.file",
-                           mime='application/pdf'
-        )
+    if st.button('Generar PDF'):
+        pdf.file = guardar_pdf(st.session_state.titulo_receta,
+                               st.session_state.receta,
+                               st.session_state.imagen_receta
+                               )
+        with open(pdf.file,'rb') as f:
+            st.download_button(label="Descargar PDF", 
+                               data=f, file_name="pdf.file",
+                               mime='application/pdf'
+                )
 
 
